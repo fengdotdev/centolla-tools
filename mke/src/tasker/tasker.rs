@@ -1,15 +1,9 @@
-pub trait Tasker {
-    fn run(&self);
-}
+use crate::interfaces::tasker_interface::TaskerInterface;
+pub struct TaskerDebug {}
 
-
-
-pub impl Tasker for Task {
-    fn run(&self) {
+impl TaskerInterface for TaskerDebug {
+    fn execute_command(&self, command: &str) {
         // execute the command in the shell
-        println!("Running command: {}", self.fdfdsfd);
+        println!("Executing command: {}", command);
     }
 }
-
-
-
